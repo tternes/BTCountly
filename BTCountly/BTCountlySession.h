@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BTCountlyDevice.h"
+#import "BTCountlyEvent.h"
 
 @interface BTCountlySession : NSObject
 
@@ -15,11 +16,13 @@
 @property (nonatomic, retain, readonly) NSURL *baseUrl;
 @property (nonatomic, assign, readonly) BOOL isActive;
 @property (nonatomic, retain, readonly) BTCountlyDevice *currentDevice;
-@property (nonatomic, assign, readonly) NSTimeInterval sessionDuration;
+@property (nonatomic, retain, readonly) NSDate *lastReportedSessionTime;
 
 - (instancetype)initWithURL:(NSURL *)baseUrl appToken:(NSString *)appToken;
 
 - (BOOL)beginSession;
 - (BOOL)endSession;
+
+- (BOOL)addEvent:(BTCountlyEvent *)event;
 
 @end

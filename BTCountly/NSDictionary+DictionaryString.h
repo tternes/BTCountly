@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSDictionary (DictionaryString)
+@interface NSObject (DictionaryString)
 
 - (NSString *)bt_stringForDictionary;
 

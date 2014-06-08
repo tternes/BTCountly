@@ -46,6 +46,7 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
     switch(self.sessionManagement)
     {
         case BTSessionStateUnknown:
+            self.sessionManagement = BTSessionStateAutomatic;
             [self privateRegisterForApplicationEvents:YES];
             return [self privateBeginSession];
 
@@ -63,6 +64,7 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
     switch(self.sessionManagement)
     {
         case BTSessionStateUnknown:
+            self.sessionManagement = BTSessionStateManual;
             return [self privateBeginSession];
             
         case BTSessionStateAutomatic:
@@ -89,7 +91,32 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
 
 - (BOOL)endSession
 {
-    return [self.session endSession];
+    BOOL result = [self.session endSession];
+    
+    if(result)
+    {
+        self.sessionManagement = BTSessionStateUnknown;
+        self.session = nil;
+    }
+    
+    return result;
+}
+
+#pragma mark - Events
+
+- (BOOL)addEvent:(NSString *)eventKey
+{
+    return [self.session addEvent:[BTCountlyEvent eventWithkey:eventKey]];
+}
+
+- (BOOL)addEvent:(NSString *)eventKey count:(NSUInteger)count
+{
+    return [self.session addEvent:[BTCountlyEvent eventWithKey:eventKey count:count]];
+}
+
+- (BOOL)addEvent:(NSString *)eventKey segmentation:(NSDictionary *)segmentation
+{
+    return [self.session addEvent:[BTCountlyEvent eventWithKey:eventKey segmentation:segmentation]];
 }
 
 #pragma mark - UIApplication Events

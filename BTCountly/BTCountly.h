@@ -60,4 +60,12 @@
  */
 - (BOOL)endSession;
 
+#pragma mark - Events
+
+- (BOOL)addEvent:(NSString *)eventKey;
+
+- (BOOL)addEvent:(NSString *)eventKey count:(NSUInteger)count;
+
+- (BOOL)addEvent:(NSString *)eventKey segmentation:(NSDictionary *)segmentation;
+
 @end

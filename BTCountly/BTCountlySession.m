@@ -11,6 +11,8 @@
 #import "BTCountlyBeginSessionRequest.h"
 #import "BTCountlyEndSessionRequest.h"
 #import "BTCountlyExtendSessionRequest.h"
+#import "BTCountlyEventCollection.h"
+#import "BTCountlyEvent.h"
 
 #define kSessionTimerInterval (30.0)
 
@@ -21,7 +23,8 @@
 @property (nonatomic, retain) NSTimer *sessionTimer;
 @property (nonatomic, retain) BTCountlyBeginSessionRequest *beginRequest;
 @property (nonatomic, retain) BTCountlyEndSessionRequest *endRequest;
-@property (nonatomic, assign) CFAbsoluteTime startTime;
+@property (nonatomic, retain) BTCountlyEventCollection *queuedEvents;
+@property (nonatomic, retain) NSDate *lastReportedSessionTime;
 @end
 
 @implementation BTCountlySession
@@ -38,8 +41,9 @@
     {
         self.baseUrl = baseUrl;
         self.appToken = appToken;
-        self.startTime = 0;
+        self.lastReportedSessionTime = nil;
         self.currentDevice = [[[BTCountlyDevice alloc] init] autorelease];
+        self.queuedEvents = [[[BTCountlyEventCollection alloc] init] autorelease];
     }
     
     return self;
@@ -56,6 +60,8 @@
     self.endRequest.delegate = nil;
     self.endRequest = nil;
     
+    self.queuedEvents = nil;
+    
     [super dealloc];
 }
 
@@ -70,7 +76,7 @@
         return NO;
     }
 
-    self.startTime = CFAbsoluteTimeGetCurrent();
+    self.lastReportedSessionTime = [NSDate date];
     self.beginRequest = [[[BTCountlyBeginSessionRequest alloc] initWithSession:self] autorelease];
     self.beginRequest.delegate = self;
     return [self.beginRequest send];
@@ -91,9 +97,14 @@
 
 - (NSTimeInterval)sessionDuration
 {
-    if(self.startTime)
-        return (NSTimeInterval)(CFAbsoluteTimeGetCurrent() - self.startTime);
+    if(self.lastReportedSessionTime)
+        return ([[NSDate date] timeIntervalSinceDate:self.lastReportedSessionTime]);
     return 0;
+}
+
+- (BOOL)addEvent:(BTCountlyEvent *)event
+{
+    return [self.queuedEvents addEvent:event];
 }
 
 #pragma mark - BTCountlyRequestDelegate
@@ -118,28 +129,63 @@
         self.endRequest.delegate = nil;
         self.endRequest = nil;
         
-        self.startTime = 0;
+        self.lastReportedSessionTime = nil;
     }
-    else
+    else if([request isKindOfClass:[BTCountlyExtendSessionRequest class]])
     {
-        // session event - release
-        request.delegate = nil;
-        [request release];
+        // record lastReportedTime
+        BTCountlyExtendSessionRequest *extendRequest = (BTCountlyExtendSessionRequest *)request;
+        extendRequest.delegate = nil;
+        
+        self.lastReportedSessionTime = extendRequest.reportedSessionTime;
+        [extendRequest release];
     }
 }
 
 - (void)countlyRequest:(BTCountlyRequest *)request failedWithError:(NSError *)error
 {
-    
+    if(request == self.beginRequest)
+    {
+        // begin_session was successfully sent - start the session timer
+        [self.sessionTimer invalidate];
+        self.sessionTimer = [NSTimer scheduledTimerWithTimeInterval:kSessionTimerInterval target:self selector:@selector(sessionTimerFired:) userInfo:nil repeats:YES];
+        
+        self.beginRequest.delegate = nil;
+        self.beginRequest = nil;
+    }
+    else if(request == self.endRequest)
+    {
+        // session is over - invalidate the timer
+        [self.sessionTimer invalidate];
+        self.sessionTimer = nil;
+        
+        self.endRequest.delegate = nil;
+        self.endRequest = nil;
+        
+        self.lastReportedSessionTime = nil;
+    }
+    else if([request isKindOfClass:[BTCountlyExtendSessionRequest class]])
+    {
+        BTCountlyExtendSessionRequest *extendRequest = (BTCountlyExtendSessionRequest *)request;
+        extendRequest.delegate = nil;
+        [extendRequest release];
+    }
 }
 
 #pragma mark - Session Timer
 
 - (void)sessionTimerFired:(NSTimer *)timer
 {
+    // TODO remove after testing
+    [self.queuedEvents addEvent:[BTCountlyEvent eventWithkey:@"hi"]];
+    [self.queuedEvents addEvent:[BTCountlyEvent eventWithkey:@"hi"]];
+    
     BTCountlyExtendSessionRequest *extend = [[BTCountlyExtendSessionRequest alloc] initWithSession:self];
+    extend.events = [self.queuedEvents events];
     extend.delegate = self;
     [extend send];
+    
+    [self.queuedEvents purge];
 }
 
 @end

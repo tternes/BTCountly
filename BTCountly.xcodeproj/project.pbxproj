@@ -24,9 +24,13 @@
 		DF32177B1943E2600006D3E1 /* BTCountlyEndSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32177A1943E2600006D3E1 /* BTCountlyEndSessionRequest.m */; };
 		DF32177F1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32177E1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m */; };
 		DF3217821943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3217811943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m */; };
+		DF648D6919443E4D00FB4C83 /* BTCountlyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DF648D6819443E4D00FB4C83 /* BTCountlyEvent.m */; };
+		DF648D6C19443ED100FB4C83 /* BTCountlyEventCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = DF648D6B19443ED100FB4C83 /* BTCountlyEventCollection.m */; };
+		DF648D6E1944401500FB4C83 /* BTCountlyEventCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF648D6D1944401500FB4C83 /* BTCountlyEventCollectionTests.m */; };
 		DF68AEA4194435AF00A3626C /* BTCountlyBeginSessionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF68AEA3194435AF00A3626C /* BTCountlyBeginSessionTests.m */; };
 		DFBFF22119442E0D00003790 /* BTCountlyDeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBFF22019442E0D00003790 /* BTCountlyDeviceTests.m */; };
 		DFBFF22319442E9F00003790 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBFF22219442E9F00003790 /* CoreTelephony.framework */; };
+		DFC24EB719445045005AB87D /* BTCountlySessionExtendEventsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC24EB619445045005AB87D /* BTCountlySessionExtendEventsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,9 +88,15 @@
 		DF32177E1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DictionaryString.m"; sourceTree = "<group>"; };
 		DF3217801943EBD80006D3E1 /* BTCountlyExtendSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyExtendSessionRequest.h; sourceTree = "<group>"; };
 		DF3217811943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyExtendSessionRequest.m; sourceTree = "<group>"; };
+		DF648D6719443E4D00FB4C83 /* BTCountlyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyEvent.h; sourceTree = "<group>"; };
+		DF648D6819443E4D00FB4C83 /* BTCountlyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyEvent.m; sourceTree = "<group>"; };
+		DF648D6A19443ED100FB4C83 /* BTCountlyEventCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyEventCollection.h; sourceTree = "<group>"; };
+		DF648D6B19443ED100FB4C83 /* BTCountlyEventCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyEventCollection.m; sourceTree = "<group>"; };
+		DF648D6D1944401500FB4C83 /* BTCountlyEventCollectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyEventCollectionTests.m; sourceTree = "<group>"; };
 		DF68AEA3194435AF00A3626C /* BTCountlyBeginSessionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyBeginSessionTests.m; sourceTree = "<group>"; };
 		DFBFF22019442E0D00003790 /* BTCountlyDeviceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyDeviceTests.m; sourceTree = "<group>"; };
 		DFBFF22219442E9F00003790 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		DFC24EB619445045005AB87D /* BTCountlySessionExtendEventsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlySessionExtendEventsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +181,11 @@
 		DF32170319439D1C0006D3E1 /* BTCountlyTests */ = {
 			isa = PBXGroup;
 			children = (
-				DFBFF22019442E0D00003790 /* BTCountlyDeviceTests.m */,
-				DF32170419439D1C0006D3E1 /* Supporting Files */,
 				DF68AEA3194435AF00A3626C /* BTCountlyBeginSessionTests.m */,
+				DFBFF22019442E0D00003790 /* BTCountlyDeviceTests.m */,
+				DF648D6D1944401500FB4C83 /* BTCountlyEventCollectionTests.m */,
+				DFC24EB619445045005AB87D /* BTCountlySessionExtendEventsTests.m */,
+				DF32170419439D1C0006D3E1 /* Supporting Files */,
 			);
 			path = BTCountlyTests;
 			sourceTree = "<group>";
@@ -200,6 +212,10 @@
 				DF32177A1943E2600006D3E1 /* BTCountlyEndSessionRequest.m */,
 				DF3217801943EBD80006D3E1 /* BTCountlyExtendSessionRequest.h */,
 				DF3217811943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m */,
+				DF648D6719443E4D00FB4C83 /* BTCountlyEvent.h */,
+				DF648D6819443E4D00FB4C83 /* BTCountlyEvent.m */,
+				DF648D6A19443ED100FB4C83 /* BTCountlyEventCollection.h */,
+				DF648D6B19443ED100FB4C83 /* BTCountlyEventCollection.m */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -317,6 +333,8 @@
 				DF3217691943B0BD0006D3E1 /* BTCountlyRequest.m in Sources */,
 				DF32177F1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m in Sources */,
 				DF3217711943BB2E0006D3E1 /* BTCountlyBeginSessionRequest.m in Sources */,
+				DF648D6C19443ED100FB4C83 /* BTCountlyEventCollection.m in Sources */,
+				DF648D6919443E4D00FB4C83 /* BTCountlyEvent.m in Sources */,
 				DF3216F519439D1C0006D3E1 /* BTCountly.m in Sources */,
 				DF3217741943C80D0006D3E1 /* NSString+UrlStringEncoding.m in Sources */,
 				DF3217631943A5070006D3E1 /* BTCountlySession.m in Sources */,
@@ -331,7 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF648D6E1944401500FB4C83 /* BTCountlyEventCollectionTests.m in Sources */,
 				DFBFF22119442E0D00003790 /* BTCountlyDeviceTests.m in Sources */,
+				DFC24EB719445045005AB87D /* BTCountlySessionExtendEventsTests.m in Sources */,
 				DF68AEA4194435AF00A3626C /* BTCountlyBeginSessionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

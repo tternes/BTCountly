@@ -7,7 +7,8 @@
 //
 
 #import "BTCountlyInputRequest.h"
+#import "BTCountlyExtendSessionRequest.h"
 
-@interface BTCountlyEndSessionRequest : BTCountlyInputRequest
+@interface BTCountlyEndSessionRequest : BTCountlyExtendSessionRequest
 
 @end

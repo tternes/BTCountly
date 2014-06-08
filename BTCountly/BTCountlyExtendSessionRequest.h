@@ -7,7 +7,9 @@
 //
 
 #import "BTCountlyInputRequest.h"
+#import "BTCountlyEvent.h"
 
 @interface BTCountlyExtendSessionRequest : BTCountlyInputRequest
-
+@property (nonatomic, retain) NSArray *events;
+@property (nonatomic, retain, readonly) NSDate *reportedSessionTime;
 @end

@@ -8,7 +8,7 @@
 
 #import "NSDictionary+DictionaryString.h"
 
-@implementation NSDictionary (DictionaryString)
+@implementation NSObject (DictionaryString)
 
 - (NSString *)bt_stringForDictionary
 {
