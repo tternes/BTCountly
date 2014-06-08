@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DF3216EE19439D1C0006D3E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3216ED19439D1C0006D3E1 /* Foundation.framework */; };
+		DF3216F319439D1C0006D3E1 /* BTCountly.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DF3216F219439D1C0006D3E1 /* BTCountly.h */; };
+		DF3216F519439D1C0006D3E1 /* BTCountly.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3216F419439D1C0006D3E1 /* BTCountly.m */; };
+		DF3216FC19439D1C0006D3E1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3216FB19439D1C0006D3E1 /* XCTest.framework */; };
+		DF3216FD19439D1C0006D3E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3216ED19439D1C0006D3E1 /* Foundation.framework */; };
+		DF3216FF19439D1C0006D3E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3216FE19439D1C0006D3E1 /* UIKit.framework */; };
+		DF32170219439D1C0006D3E1 /* libBTCountly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3216EA19439D1C0006D3E1 /* libBTCountly.a */; };
+		DF32170819439D1C0006D3E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF32170619439D1C0006D3E1 /* InfoPlist.strings */; };
+		DF32170A19439D1C0006D3E1 /* BTCountlyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32170919439D1C0006D3E1 /* BTCountlyTests.m */; };
+		DF3217631943A5070006D3E1 /* BTCountlySession.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3217621943A5070006D3E1 /* BTCountlySession.m */; };
+		DF3217691943B0BD0006D3E1 /* BTCountlyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3217681943B0BD0006D3E1 /* BTCountlyRequest.m */; };
+		DF32176C1943B9BE0006D3E1 /* BTCountlyInputRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32176B1943B9BE0006D3E1 /* BTCountlyInputRequest.m */; };
+		DF3217711943BB2E0006D3E1 /* BTCountlyBeginSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3217701943BB2E0006D3E1 /* BTCountlyBeginSessionRequest.m */; };
+		DF3217741943C80D0006D3E1 /* NSString+UrlStringEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3217731943C80D0006D3E1 /* NSString+UrlStringEncoding.m */; };
+		DF3217771943CC080006D3E1 /* BTCountlyDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3217761943CC080006D3E1 /* BTCountlyDevice.m */; };
+		DF32177B1943E2600006D3E1 /* BTCountlyEndSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32177A1943E2600006D3E1 /* BTCountlyEndSessionRequest.m */; };
+		DF32177F1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32177E1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m */; };
+		DF3217821943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3217811943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DF32170019439D1C0006D3E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DF3216E219439D1C0006D3E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DF3216E919439D1C0006D3E1;
+			remoteInfo = BTCountly;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DF3216E819439D1C0006D3E1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				DF3216F319439D1C0006D3E1 /* BTCountly.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DF3216EA19439D1C0006D3E1 /* libBTCountly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBTCountly.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF3216ED19439D1C0006D3E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DF3216F119439D1C0006D3E1 /* BTCountly-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BTCountly-Prefix.pch"; sourceTree = "<group>"; };
+		DF3216F219439D1C0006D3E1 /* BTCountly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTCountly.h; sourceTree = "<group>"; };
+		DF3216F419439D1C0006D3E1 /* BTCountly.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTCountly.m; sourceTree = "<group>"; };
+		DF3216FA19439D1C0006D3E1 /* BTCountlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BTCountlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF3216FB19439D1C0006D3E1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DF3216FE19439D1C0006D3E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		DF32170519439D1C0006D3E1 /* BTCountlyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BTCountlyTests-Info.plist"; sourceTree = "<group>"; };
+		DF32170719439D1C0006D3E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DF32170919439D1C0006D3E1 /* BTCountlyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTCountlyTests.m; sourceTree = "<group>"; };
+		DF3217611943A5070006D3E1 /* BTCountlySession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlySession.h; sourceTree = "<group>"; };
+		DF3217621943A5070006D3E1 /* BTCountlySession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlySession.m; sourceTree = "<group>"; };
+		DF3217641943AC260006D3E1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		DF3217651943AC260006D3E1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		DF3217661943AE9D0006D3E1 /* BTCountlyArcCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTCountlyArcCheck.h; sourceTree = "<group>"; };
+		DF3217671943B0BD0006D3E1 /* BTCountlyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyRequest.h; sourceTree = "<group>"; };
+		DF3217681943B0BD0006D3E1 /* BTCountlyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyRequest.m; sourceTree = "<group>"; };
+		DF32176A1943B9BE0006D3E1 /* BTCountlyInputRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyInputRequest.h; sourceTree = "<group>"; };
+		DF32176B1943B9BE0006D3E1 /* BTCountlyInputRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyInputRequest.m; sourceTree = "<group>"; };
+		DF32176F1943BB2E0006D3E1 /* BTCountlyBeginSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyBeginSessionRequest.h; sourceTree = "<group>"; };
+		DF3217701943BB2E0006D3E1 /* BTCountlyBeginSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyBeginSessionRequest.m; sourceTree = "<group>"; };
+		DF3217721943C80D0006D3E1 /* NSString+UrlStringEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UrlStringEncoding.h"; sourceTree = "<group>"; };
+		DF3217731943C80D0006D3E1 /* NSString+UrlStringEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UrlStringEncoding.m"; sourceTree = "<group>"; };
+		DF3217751943CC080006D3E1 /* BTCountlyDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyDevice.h; sourceTree = "<group>"; };
+		DF3217761943CC080006D3E1 /* BTCountlyDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyDevice.m; sourceTree = "<group>"; };
+		DF3217791943E2600006D3E1 /* BTCountlyEndSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyEndSessionRequest.h; sourceTree = "<group>"; };
+		DF32177A1943E2600006D3E1 /* BTCountlyEndSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyEndSessionRequest.m; sourceTree = "<group>"; };
+		DF32177D1943E4CF0006D3E1 /* NSDictionary+DictionaryString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DictionaryString.h"; sourceTree = "<group>"; };
+		DF32177E1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DictionaryString.m"; sourceTree = "<group>"; };
+		DF3217801943EBD80006D3E1 /* BTCountlyExtendSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCountlyExtendSessionRequest.h; sourceTree = "<group>"; };
+		DF3217811943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyExtendSessionRequest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF3216E719439D1C0006D3E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF3216EE19439D1C0006D3E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF3216F719439D1C0006D3E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF32170219439D1C0006D3E1 /* libBTCountly.a in Frameworks */,
+				DF3216FC19439D1C0006D3E1 /* XCTest.framework in Frameworks */,
+				DF3216FF19439D1C0006D3E1 /* UIKit.framework in Frameworks */,
+				DF3216FD19439D1C0006D3E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DF3216E119439D1C0006D3E1 = {
+			isa = PBXGroup;
+			children = (
+				DF3216EF19439D1C0006D3E1 /* BTCountly */,
+				DF32170319439D1C0006D3E1 /* BTCountlyTests */,
+				DF3216EC19439D1C0006D3E1 /* Frameworks */,
+				DF3216EB19439D1C0006D3E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DF3216EB19439D1C0006D3E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF3216EA19439D1C0006D3E1 /* libBTCountly.a */,
+				DF3216FA19439D1C0006D3E1 /* BTCountlyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF3216EC19439D1C0006D3E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF3216ED19439D1C0006D3E1 /* Foundation.framework */,
+				DF3216FB19439D1C0006D3E1 /* XCTest.framework */,
+				DF3216FE19439D1C0006D3E1 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF3216EF19439D1C0006D3E1 /* BTCountly */ = {
+			isa = PBXGroup;
+			children = (
+				DF32177C1943E4A80006D3E1 /* Categories */,
+				DF3217781943CC0D0006D3E1 /* Device */,
+				DF32176E1943BA890006D3E1 /* Session */,
+				DF32176D1943BA770006D3E1 /* Requests */,
+				DF3216F219439D1C0006D3E1 /* BTCountly.h */,
+				DF3216F419439D1C0006D3E1 /* BTCountly.m */,
+				DF3216F019439D1C0006D3E1 /* Supporting Files */,
+			);
+			path = BTCountly;
+			sourceTree = "<group>";
+		};
+		DF3216F019439D1C0006D3E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF3217661943AE9D0006D3E1 /* BTCountlyArcCheck.h */,
+				DF3216F119439D1C0006D3E1 /* BTCountly-Prefix.pch */,
+				DF3217641943AC260006D3E1 /* LICENSE */,
+				DF3217651943AC260006D3E1 /* README.md */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF32170319439D1C0006D3E1 /* BTCountlyTests */ = {
+			isa = PBXGroup;
+			children = (
+				DF32170919439D1C0006D3E1 /* BTCountlyTests.m */,
+				DF32170419439D1C0006D3E1 /* Supporting Files */,
+			);
+			path = BTCountlyTests;
+			sourceTree = "<group>";
+		};
+		DF32170419439D1C0006D3E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF32170519439D1C0006D3E1 /* BTCountlyTests-Info.plist */,
+				DF32170619439D1C0006D3E1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF32176D1943BA770006D3E1 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				DF3217671943B0BD0006D3E1 /* BTCountlyRequest.h */,
+				DF3217681943B0BD0006D3E1 /* BTCountlyRequest.m */,
+				DF32176A1943B9BE0006D3E1 /* BTCountlyInputRequest.h */,
+				DF32176B1943B9BE0006D3E1 /* BTCountlyInputRequest.m */,
+				DF32176F1943BB2E0006D3E1 /* BTCountlyBeginSessionRequest.h */,
+				DF3217701943BB2E0006D3E1 /* BTCountlyBeginSessionRequest.m */,
+				DF3217791943E2600006D3E1 /* BTCountlyEndSessionRequest.h */,
+				DF32177A1943E2600006D3E1 /* BTCountlyEndSessionRequest.m */,
+				DF3217801943EBD80006D3E1 /* BTCountlyExtendSessionRequest.h */,
+				DF3217811943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		DF32176E1943BA890006D3E1 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				DF3217611943A5070006D3E1 /* BTCountlySession.h */,
+				DF3217621943A5070006D3E1 /* BTCountlySession.m */,
+			);
+			name = Session;
+			sourceTree = "<group>";
+		};
+		DF3217781943CC0D0006D3E1 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				DF3217751943CC080006D3E1 /* BTCountlyDevice.h */,
+				DF3217761943CC080006D3E1 /* BTCountlyDevice.m */,
+			);
+			name = Device;
+			sourceTree = "<group>";
+		};
+		DF32177C1943E4A80006D3E1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DF3217721943C80D0006D3E1 /* NSString+UrlStringEncoding.h */,
+				DF3217731943C80D0006D3E1 /* NSString+UrlStringEncoding.m */,
+				DF32177D1943E4CF0006D3E1 /* NSDictionary+DictionaryString.h */,
+				DF32177E1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF3216E919439D1C0006D3E1 /* BTCountly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF32170D19439D1C0006D3E1 /* Build configuration list for PBXNativeTarget "BTCountly" */;
+			buildPhases = (
+				DF3216E619439D1C0006D3E1 /* Sources */,
+				DF3216E719439D1C0006D3E1 /* Frameworks */,
+				DF3216E819439D1C0006D3E1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BTCountly;
+			productName = BTCountly;
+			productReference = DF3216EA19439D1C0006D3E1 /* libBTCountly.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DF3216F919439D1C0006D3E1 /* BTCountlyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF32171019439D1C0006D3E1 /* Build configuration list for PBXNativeTarget "BTCountlyTests" */;
+			buildPhases = (
+				DF3216F619439D1C0006D3E1 /* Sources */,
+				DF3216F719439D1C0006D3E1 /* Frameworks */,
+				DF3216F819439D1C0006D3E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DF32170119439D1C0006D3E1 /* PBXTargetDependency */,
+			);
+			name = BTCountlyTests;
+			productName = BTCountlyTests;
+			productReference = DF3216FA19439D1C0006D3E1 /* BTCountlyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF3216E219439D1C0006D3E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Bluetoo;
+			};
+			buildConfigurationList = DF3216E519439D1C0006D3E1 /* Build configuration list for PBXProject "BTCountly" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DF3216E119439D1C0006D3E1;
+			productRefGroup = DF3216EB19439D1C0006D3E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF3216E919439D1C0006D3E1 /* BTCountly */,
+				DF3216F919439D1C0006D3E1 /* BTCountlyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF3216F819439D1C0006D3E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF32170819439D1C0006D3E1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF3216E619439D1C0006D3E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF3217691943B0BD0006D3E1 /* BTCountlyRequest.m in Sources */,
+				DF32177F1943E4CF0006D3E1 /* NSDictionary+DictionaryString.m in Sources */,
+				DF3217711943BB2E0006D3E1 /* BTCountlyBeginSessionRequest.m in Sources */,
+				DF3216F519439D1C0006D3E1 /* BTCountly.m in Sources */,
+				DF3217741943C80D0006D3E1 /* NSString+UrlStringEncoding.m in Sources */,
+				DF3217631943A5070006D3E1 /* BTCountlySession.m in Sources */,
+				DF32176C1943B9BE0006D3E1 /* BTCountlyInputRequest.m in Sources */,
+				DF3217771943CC080006D3E1 /* BTCountlyDevice.m in Sources */,
+				DF32177B1943E2600006D3E1 /* BTCountlyEndSessionRequest.m in Sources */,
+				DF3217821943EBD80006D3E1 /* BTCountlyExtendSessionRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF3216F619439D1C0006D3E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF32170A19439D1C0006D3E1 /* BTCountlyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DF32170119439D1C0006D3E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DF3216E919439D1C0006D3E1 /* BTCountly */;
+			targetProxy = DF32170019439D1C0006D3E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DF32170619439D1C0006D3E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF32170719439D1C0006D3E1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF32170B19439D1C0006D3E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DF32170C19439D1C0006D3E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF32170E19439D1C0006D3E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DSTROOT = /tmp/BTCountly.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BTCountly/BTCountly-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DF32170F19439D1C0006D3E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				DSTROOT = /tmp/BTCountly.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BTCountly/BTCountly-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DF32171119439D1C0006D3E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BTCountly/BTCountly-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BTCountlyTests/BTCountlyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DF32171219439D1C0006D3E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BTCountly/BTCountly-Prefix.pch";
+				INFOPLIST_FILE = "BTCountlyTests/BTCountlyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF3216E519439D1C0006D3E1 /* Build configuration list for PBXProject "BTCountly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF32170B19439D1C0006D3E1 /* Debug */,
+				DF32170C19439D1C0006D3E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF32170D19439D1C0006D3E1 /* Build configuration list for PBXNativeTarget "BTCountly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF32170E19439D1C0006D3E1 /* Debug */,
+				DF32170F19439D1C0006D3E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF32171019439D1C0006D3E1 /* Build configuration list for PBXNativeTarget "BTCountlyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF32171119439D1C0006D3E1 /* Debug */,
+				DF32171219439D1C0006D3E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF3216E219439D1C0006D3E1 /* Project object */;
+}
