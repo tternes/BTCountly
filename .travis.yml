@@ -1,4 +1,1 @@
-language: objective-c
-xcode_project: BTCountly.xcodeproj
-xcode_scheme: BTCountly
-xcode_sdk: iphonesimulator
+script: xctool -project BTCountly.xcodeproj -scheme BTCountly -sdk iphonesimulator build test
