@@ -2,6 +2,9 @@
 
 BTCountly
 =========
+
+[![Build Status](https://travis-ci.org/tternes/BTCountly.svg?branch=master)](https://travis-ci.org/tternes/BTCountly)
+
 [BTCountly] is an API client for the esteemed [Count.ly] mobile analytics platform. It is written in Objective-C and builds for iOS 6.0+ and OS X 10.7+.
 
 This from-scratch project has been influenced and inspired by the [official Count.ly iOS SDK](https://github.com/Countly/countly-sdk-ios). However, it was created with the following design goals in mind:
