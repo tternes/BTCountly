@@ -1,4 +1,7 @@
 language: objective-c
+before_install:
+  - brew update
+  - brew upgrade xctool
 xcode_project: BTCountly.xcodeproj
 xcode_scheme: BTCountly
 xcode_sdk: iphonesimulator
