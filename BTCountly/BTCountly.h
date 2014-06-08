@@ -37,7 +37,7 @@
  *  The Count.ly server installation URL. This does not include paths to specific API endpoints on the server.
  *  This property must be set before starting a session.
  */
-@property (nonatomic, retain) NSURL *serverUrl;
+@property (nonatomic, retain) NSString *serverUrl;
 
 /**
  *  The application-specific token used to identify events to the Count.ly server installation.

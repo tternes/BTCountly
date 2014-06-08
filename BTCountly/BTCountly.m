@@ -83,7 +83,7 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
         return NO;
     }
     
-    self.session = [[[BTCountlySession alloc] initWithURL:self.serverUrl appToken:self.appToken] autorelease];
+    self.session = [[[BTCountlySession alloc] initWithURL:[NSURL URLWithString:self.serverUrl] appToken:self.appToken] autorelease];
     return [self.session beginSession];
 }
 

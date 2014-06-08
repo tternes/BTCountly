@@ -26,14 +26,19 @@
 
 @implementation BTCountlySession
 
+- (instancetype)init
+{
+    return [self initWithURL:nil appToken:nil];
+}
+
 - (instancetype)initWithURL:(NSURL *)baseUrl appToken:(NSString *)appToken
 {
     self = [super init];
     if(self)
     {
-        self.startTime = 0;
         self.baseUrl = baseUrl;
         self.appToken = appToken;
+        self.startTime = 0;
         self.currentDevice = [[[BTCountlyDevice alloc] init] autorelease];
     }
     
