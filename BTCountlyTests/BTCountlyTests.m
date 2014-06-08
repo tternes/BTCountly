@@ -31,4 +31,9 @@
 
 }
 
+- (void)testAnotherPassingWonder
+{
+    // yay!
+}
+
 @end
