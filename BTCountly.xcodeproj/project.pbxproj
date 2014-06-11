@@ -31,6 +31,7 @@
 		DFBFF22119442E0D00003790 /* BTCountlyDeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBFF22019442E0D00003790 /* BTCountlyDeviceTests.m */; };
 		DFBFF22319442E9F00003790 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFBFF22219442E9F00003790 /* CoreTelephony.framework */; };
 		DFC24EB719445045005AB87D /* BTCountlySessionExtendEventsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC24EB619445045005AB87D /* BTCountlySessionExtendEventsTests.m */; };
+		DFC24EBC194823E5005AB87D /* BTcountlyEnabledTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC24EBB194823E5005AB87D /* BTcountlyEnabledTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		DFBFF22019442E0D00003790 /* BTCountlyDeviceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlyDeviceTests.m; sourceTree = "<group>"; };
 		DFBFF22219442E9F00003790 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DFC24EB619445045005AB87D /* BTCountlySessionExtendEventsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCountlySessionExtendEventsTests.m; sourceTree = "<group>"; };
+		DFC24EBB194823E5005AB87D /* BTcountlyEnabledTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTcountlyEnabledTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			children = (
 				DF68AEA3194435AF00A3626C /* BTCountlyBeginSessionTests.m */,
 				DFBFF22019442E0D00003790 /* BTCountlyDeviceTests.m */,
+				DFC24EBB194823E5005AB87D /* BTcountlyEnabledTests.m */,
 				DF648D6D1944401500FB4C83 /* BTCountlyEventCollectionTests.m */,
 				DFC24EB619445045005AB87D /* BTCountlySessionExtendEventsTests.m */,
 				DF32170419439D1C0006D3E1 /* Supporting Files */,
@@ -351,6 +354,7 @@
 			files = (
 				DF648D6E1944401500FB4C83 /* BTCountlyEventCollectionTests.m in Sources */,
 				DFBFF22119442E0D00003790 /* BTCountlyDeviceTests.m in Sources */,
+				DFC24EBC194823E5005AB87D /* BTcountlyEnabledTests.m in Sources */,
 				DFC24EB719445045005AB87D /* BTCountlySessionExtendEventsTests.m in Sources */,
 				DF68AEA4194435AF00A3626C /* BTCountlyBeginSessionTests.m in Sources */,
 			);

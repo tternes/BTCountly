@@ -32,6 +32,8 @@
 
 - (BOOL)addEvent:(BTCountlyEvent *)event
 {
+    NSAssert(self.eventList, @"invalid event list");
+    
     __block BTCountlyEvent *matchingItem = nil;
     [self.eventList enumerateObjectsUsingBlock:^(BTCountlyEvent *existing, NSUInteger idx, BOOL *stop) {
 
@@ -68,7 +70,7 @@
         [self.eventList addObject:event];
     }
     
-    return NO;
+    return YES; // TODO failure cases
 }
 
 - (NSArray *)events

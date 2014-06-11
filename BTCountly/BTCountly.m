@@ -39,10 +39,27 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
     return s_shared;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if(self)
+    {
+        self.enabled = YES;
+    }
+    
+    return self;
+}
+
 #pragma mark - Automatic Session API
 
 - (BOOL)startSessionWithServer:(NSString *)serverUrl forAppToken:(NSString *)appToken
 {
+    if(self.isEnabled == NO)
+        return NO;
+
+    self.serverUrl = serverUrl;
+    self.appToken = appToken;
+    
     switch(self.sessionManagement)
     {
         case BTSessionStateUnknown:
@@ -61,6 +78,9 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
 
 - (BOOL)beginSession;
 {
+    if(self.isEnabled == NO)
+        return NO;
+
     switch(self.sessionManagement)
     {
         case BTSessionStateUnknown:
@@ -74,32 +94,34 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
     }
 }
 
-- (BOOL)privateBeginSession
-{
-    NSAssert(self.serverUrl, @"serverUrl must be set before beginning a session");
-    NSAssert(self.appToken.length, @"appToken must be set before beginning a session");
-    
-    // Is session already active?
-    if(self.session)
-    {
-        return NO;
-    }
-    
-    self.session = [[[BTCountlySession alloc] initWithURL:[NSURL URLWithString:self.serverUrl] appToken:self.appToken] autorelease];
-    return [self.session beginSession];
-}
-
 - (BOOL)endSession
 {
-    BOOL result = [self.session endSession];
-    
-    if(result)
-    {
-        self.sessionManagement = BTSessionStateUnknown;
-        self.session = nil;
-    }
-    
+    BOOL result = NO;
+
+    // if enabled, we want to be sure end_session gets sent
+    // if not, we __DON'T__ want data sent out
+    result = (self.enabled) ? [self.session endSession] : NO;
+    self.sessionManagement = BTSessionStateUnknown;
+    self.session = nil;
+
     return result;
+}
+
+- (BOOL)isSessionActive
+{
+    return [self.session isActive];
+}
+
+- (void)setEnabled:(BOOL)enabled
+{
+    [self willChangeValueForKey:@"enabled"];
+    _enabled = enabled;
+    
+    // are we enabled? - endSession will purge
+    if(enabled == NO)
+        [self endSession];
+    
+    [self didChangeValueForKey:@"enabled"];
 }
 
 #pragma mark - Events
@@ -117,6 +139,23 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
 - (BOOL)addEvent:(NSString *)eventKey segmentation:(NSDictionary *)segmentation
 {
     return [self.session addEvent:[BTCountlyEvent eventWithKey:eventKey segmentation:segmentation]];
+}
+
+#pragma mark - Private
+
+- (BOOL)privateBeginSession
+{
+    NSAssert(self.serverUrl, @"serverUrl must be set before beginning a session");
+    NSAssert(self.appToken.length, @"appToken must be set before beginning a session");
+    
+    // Is session already active?
+    if(self.session)
+    {
+        return NO;
+    }
+    
+    self.session = [[[BTCountlySession alloc] initWithURL:[NSURL URLWithString:self.serverUrl] appToken:self.appToken] autorelease];
+    return [self.session beginSession];
 }
 
 #pragma mark - UIApplication Events
