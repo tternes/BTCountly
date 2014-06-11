@@ -64,7 +64,7 @@ You have two options when integrating the library: automatic or manual session m
 
 ARC
 -----
-BTCountly is knowingly built with manual `-retain` / `-release`, rather than using Automatic Reference Counting. This is to prevent the library from being incompatible with older OSes, in hopes that other modern dependencies (`NSJSONSerialization`) can be removed.
+BTCountly is knowingly built with manual `-retain` / `-release`, rather than using Automatic Reference Counting. This is to prevent the library from being incompatible with older OSes, in hopes that other modern dependencies (`NSJSONSerialization`) can be removed. While this won't matter for iOS, since Apple won't accept new builds targeting old architectures, support for older Mac OS versions is still common in modern OS X apps.
 
 Contact
 ---
