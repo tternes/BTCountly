@@ -10,16 +10,9 @@
 
 @interface BTCountly : NSObject
 
-#pragma mark - Shared Instance
-
-/**
- *  A convenience method for lazy programmers.
- *
- *  @return A static instance of the BTCountly class. Other instances may be allocated and initialized with -init as expected.
- */
-+ (BTCountly *)shared;
-
+// --------------------------------------------------------------------------------------------------------
 #pragma mark - Automatic Session API
+// --------------------------------------------------------------------------------------------------------
 
 /**
  *  Initializes the serverUrl and appToken properties, and then configures automatic session support. When used, the client application doesn't need to deal with background/foreground transitions to report session state - this handlers are registered within the BTCountly library.
@@ -31,7 +24,9 @@
  */
 - (BOOL)startSessionWithServer:(NSString *)serverUrl forAppToken:(NSString *)appToken;
 
+// --------------------------------------------------------------------------------------------------------
 #pragma mark - Manual Session API
+// --------------------------------------------------------------------------------------------------------
 
 /**
  *  The Count.ly server installation URL. This does not include paths to specific API endpoints on the server.
@@ -60,12 +55,26 @@
  */
 - (BOOL)endSession;
 
+// --------------------------------------------------------------------------------------------------------
 #pragma mark - Events
+// --------------------------------------------------------------------------------------------------------
 
 - (BOOL)addEvent:(NSString *)eventKey;
 
 - (BOOL)addEvent:(NSString *)eventKey count:(NSUInteger)count;
 
 - (BOOL)addEvent:(NSString *)eventKey segmentation:(NSDictionary *)segmentation;
+
+
+// --------------------------------------------------------------------------------------------------------
+#pragma mark - Shared Instance
+// --------------------------------------------------------------------------------------------------------
+
+/**
+ *  A convenience method for lazy programmers.
+ *
+ *  @return A static instance of the BTCountly class. Other instances may be allocated and initialized with -init as expected.
+ */
++ (BTCountly *)shared;
 
 @end
