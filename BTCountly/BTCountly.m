@@ -2,7 +2,7 @@
 //  BTCountly.m
 //  BTCountly
 //
-//  Created by Thaddeus on 6/7/14.
+//  Created by Thaddeus Ternes on 6/7/14.
 //  Copyright (c) 2014 Bluetoo. All rights reserved.
 //
 
@@ -182,23 +182,31 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
     }
     else
     {
-        
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:UIApplicationDidEnterBackgroundNotification
+                                                      object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:UIApplicationDidBecomeActiveNotification
+                                                      object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:UIApplicationWillTerminateNotification
+                                                      object:nil];
     }
 }
 
 - (void)applicationDidEnterBackground:(NSNotification *)notification
 {
-    
+    [self endSession];
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)notification
 {
-    
+    [self beginSession];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
-    
+    [self endSession];
 }
 
 @end
