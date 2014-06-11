@@ -89,10 +89,18 @@
     {
         return NO;
     }
-    
+
     self.endRequest = [[[BTCountlyEndSessionRequest alloc] initWithSession:self] autorelease];
     self.endRequest.delegate = self;
-    return [self.endRequest send];
+    self.endRequest.events = [self.queuedEvents events];
+    
+    if([self.endRequest send])
+    {
+        [self.queuedEvents purge];
+        return YES;
+    }
+
+    return NO;
 }
 
 - (NSTimeInterval)sessionDuration
@@ -176,16 +184,13 @@
 
 - (void)sessionTimerFired:(NSTimer *)timer
 {
-    // TODO remove after testing
-    [self.queuedEvents addEvent:[BTCountlyEvent eventWithkey:@"hi"]];
-    [self.queuedEvents addEvent:[BTCountlyEvent eventWithkey:@"hi"]];
-    
     BTCountlyExtendSessionRequest *extend = [[BTCountlyExtendSessionRequest alloc] initWithSession:self];
     extend.events = [self.queuedEvents events];
     extend.delegate = self;
-    [extend send];
-    
-    [self.queuedEvents purge];
+    if([extend send])
+    {
+        [self.queuedEvents purge];
+    }
 }
 
 @end
