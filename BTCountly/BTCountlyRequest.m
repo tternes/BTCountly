@@ -9,10 +9,17 @@
 #import "BTCountlyRequest.h"
 #import "NSString+UrlStringEncoding.h"
 
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#endif
+
 @interface BTCountlyRequest ()
 @property (nonatomic, retain) BTCountlySession *session;
 @property (nonatomic, retain) NSMutableURLRequest *urlRequest;
 @property (nonatomic, retain) NSURLConnection *urlConnection;
+#if TARGET_OS_IPHONE
+@property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTask;
+#endif
 @end
 
 @implementation BTCountlyRequest
@@ -65,6 +72,16 @@
     
     self.urlConnection = [NSURLConnection connectionWithRequest:self.urlRequest delegate:self];
     [self.urlConnection start];
+
+#if TARGET_OS_IPHONE
+    self.backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+
+        NSLog(@"background task expired for request: %@", self);
+        [self.urlConnection cancel];
+        
+    }];
+#endif
+    
     return YES;
 }
 
@@ -74,6 +91,10 @@
 {
     NSLog(@"** failed to make connection: %@, error=%@", self.urlRequest, error);
     [self.delegate countlyRequest:self failedWithError:error];
+    
+#if TARGET_OS_IPHONE
+    [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
+#endif
 }
 
 #pragma mark - NSURLConnectionDataDelegate
@@ -107,6 +128,10 @@
     // ...
     NSLog(@"%s", __PRETTY_FUNCTION__);
     [self.delegate countlyRequestSuccessfullyCompleted:self];
+    
+#if TARGET_OS_IPHONE
+    [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTask];
+#endif
 }
 
 
