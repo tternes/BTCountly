@@ -102,7 +102,6 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
     // if not, we __DON'T__ want data sent out
     result = (self.enabled) ? [self.session endSession] : NO;
     self.sessionManagement = BTSessionStateUnknown;
-    self.session = nil;
 
     return result;
 }
@@ -149,12 +148,13 @@ typedef NS_OPTIONS(NSUInteger, BTCountlySessionManagementState)
     NSAssert(self.appToken.length, @"appToken must be set before beginning a session");
     
     // Is session already active?
-    if(self.session)
+    if([self.session isActive])
     {
         return NO;
     }
     
-    self.session = [[[BTCountlySession alloc] initWithURL:[NSURL URLWithString:self.serverUrl] appToken:self.appToken] autorelease];
+    if(self.session == nil)
+        self.session = [[[BTCountlySession alloc] initWithURL:[NSURL URLWithString:self.serverUrl] appToken:self.appToken] autorelease];
     return [self.session beginSession];
 }
 
