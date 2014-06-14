@@ -42,7 +42,7 @@
                                     nil];
     
     if(device.cellularCarrier)
-        [device setValue:[device cellularCarrier] forKey:@"_carrier"];
+        [metrics setValue:[device cellularCarrier] forKey:@"_carrier"];
     
     return metrics;
 }
